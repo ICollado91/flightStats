@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airline: MyString
+  flightnumber: 1
+  origin: MyString
+  destination: MyString
+  SchedDepLocal: 2017-05-07 13:43:08
+  depterminal: MyString
+  depgate: MyString
+  aircrafttype: MyString
+  tailnumber: MyString
+  outgatelocal: 2017-05-07 13:43:08
+  inairlocal: 2017-05-07 13:43:08
+  cancelled: 1
+  acttaxitimedep: 1
+  minlatedep: 1
+
+two:
+  airline: MyString
+  flightnumber: 1
+  origin: MyString
+  destination: MyString
+  SchedDepLocal: 2017-05-07 13:43:08
+  depterminal: MyString
+  depgate: MyString
+  aircrafttype: MyString
+  tailnumber: MyString
+  outgatelocal: 2017-05-07 13:43:08
+  inairlocal: 2017-05-07 13:43:08
+  cancelled: 1
+  acttaxitimedep: 1
+  minlatedep: 1

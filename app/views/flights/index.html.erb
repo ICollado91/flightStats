@@ -1,0 +1,49 @@
+<%= flash[:notice] %>
+<table>
+    <thead>
+        <tr>
+            <th>Airline</th>
+            <th>Flight Number</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Schedule Departure</th>
+            <th>Departure Terminal</th>
+            <th>Departure Gate</th>
+            <th>Aircraft Type</th>
+            <th>Tail Number</th>
+            <th>Off Block</th>
+            <th>Take Off Time</th>
+            <th>Cancelled</th>
+            <th>Time on Runway</th>
+            <th>Minutes Late Departed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @flights.each do |flight| %>
+            <tr>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.airline %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div>
+    <h4>Import More Flight Data</h4>
+        <%= form_tag import_flights_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Import CSV" %>
+        <% end %>
+</div>
