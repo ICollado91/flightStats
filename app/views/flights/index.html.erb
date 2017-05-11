@@ -22,19 +22,19 @@
         <% @flights.each do |flight| %>
             <tr>
                 <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.airline %></td>
+                <td><%= flight.flightnumber %></td>
+                <td><%= flight.origin %></td>
+                <td><%= flight.destination %></td>
+                <td><%= flight.scheddeplocal %></td>
+                <td><%= flight.depterminal %></td>
+                <td><%= flight.depgate %></td>
+                <td><%= flight.aircrafttype %></td>
+                <td><%= flight.tailnumber %></td>
+                <td><%= flight.outgatelocal %></td>
+                <td><%= flight.inairlocal %></td>
+                <td><%= flight.cancelled %></td>
+                <td><%= flight.acttaxitimedep %></td>
+                <td><%= flight.minlatedep %></td>
             </tr>
         <% end %>
     </tbody>
