@@ -1,6 +1,6 @@
 <%= flash[:notice] %>
 <div>
-    <h4 class="deepshadow">Flight Data</h4>
+    <h4 class="deepshadow">Flight Turn Data</h4>
         <%= form_tag import_flights_path, multipart: true do %>
             <%= file_field_tag :file %>
             <%= submit_tag "Import CSV", :class => 'myButton' %>
@@ -69,20 +69,22 @@
     </thead>
     <tbody>
         <% @turns.each do |couple| %>
-            <% if couple[1].depterminal == "B" && couple[0].arrterminal == 'B' %>
+            <% if couple[0].cancelled == "1" %>
                 <tr>
-                    <td><%= couple[0].airlinecode %> | <%= couple[0].flightnumber %></td>
-                    <td><%= couple[1].airlinecode %> | <%= couple[1].flightnumber %></td>
+                    <td><%= couple[0].airlinecode %><%= couple[0].flightnumber %></td>
+                    <td><%= couple[1].airlinecode %><%= couple[1].flightnumber %></td>
                     <td><%= couple[0].tailnumber %> | <%= couple[1].tailnumber %></td>
                     <td><%= couple[0].schedarrapt %></td>
-                    <td><%= couple[1].scheddeplocal %></td>
+                    <td><%= couple[1].scheddepapt %></td>
                     <td><%= couple[1].depterminal %></td>
                     <td><%= couple[0].arrterminal %></td>
                     <td><%= couple[0].arrgate %></td>
                     <td><%= couple[1].depgate %></td>
                 </tr>
-            <% end %>
+            <% end %> 
         <% end %>
-    </tbody>
+
+
+    
 </table>
 

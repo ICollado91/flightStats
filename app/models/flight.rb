@@ -15,7 +15,7 @@ class Flight < ApplicationRecord
         end
     end
     
-    def is_a_departure?
+    def self.is_a_departure?
         self.scheddepapt == 'LGA'
     end
     
@@ -42,15 +42,23 @@ class Flight < ApplicationRecord
     end
     
     def self.turns
-        turns = Array.new
-        departures do |dep|
-            arrivals do |arr|
-                if dep.tailnumber == arr.tailnumber
-                    turns << [arr, dep]
+        tours = Array.new
+        depar = Flight.departures
+        arriv = Flight.arrivals
+        
+        depar.sort_by! {|dep| dep.airlinecode}
+        arriv.sort_by! {|arr| arr.airlinecode}
+        
+        depar.each do |dep|
+            found = false
+            arriv.each do |arr|
+                if dep.tailnumber == arr.tailnumber && found == false
+                    tours << [arr, dep]
+                    found = true
                 end
             end
         end
-        turns
+        tours
     end
     
     private
