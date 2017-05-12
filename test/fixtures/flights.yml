@@ -1,33 +1,119 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  airline: MyString
-  flightnumber: 1
-  origin: MyString
-  destination: MyString
-  SchedDepLocal: 2017-05-07 13:43:08
+  flightid: MyString
+  airlinecode: MyString
+  flightnumber: MyString
+  scheddepapt: MyString
+  schedarrapt: MyString
+  scheddeputc: MyString
+  schedarrutc: MyString
+  scheddeplocal: MyString
+  schedarrlocal: MyString
+  diversionstatus: MyString
+  recovflightid: MyString
+  opairlinecode: MyString
+  opflightnumber: MyString
+  altdepapt: MyString
+  altarrapt: MyString
   depterminal: MyString
   depgate: MyString
+  arrterminal: MyString
+  arrgate: MyString
+  baggage: MyString
+  servicetype: MyString
   aircrafttype: MyString
+  unscheduled: MyString
+  depcountrycode: MyString
+  arrcountrycode: MyString
   tailnumber: MyString
-  outgatelocal: 2017-05-07 13:43:08
-  inairlocal: 2017-05-07 13:43:08
-  cancelled: 1
-  acttaxitimedep: 1
-  minlatedep: 1
+  regairlinecode: MyString
+  regflightnumber: MyString
+  origdate: MyString
+  prevfltalcode: MyString
+  prevfltnumber: MyString
+  prevfltschedarrlocal: MyString
+  prevfltschedarrutc: MyString
+  outgatelocal: MyString
+  outgateutc: MyString
+  outgateaccuracy: MyString
+  inairlocal: MyString
+  inairutc: MyString
+  inairaccuracy: MyString
+  landedlocal: MyString
+  landedutc: MyString
+  landedaccuracy: MyString
+  ingatelocal: MyString
+  ingateutc: MyString
+  ingateaccuracy: MyString
+  diversiontype: MyString
+  simplemaxalt: MyString
+  simpleavgalt: MyString
+  simplemaxspeed: MyString
+  simpleavgspeed: MyString
+  distancegc: MyString
+  timealoft: MyString
+  cancelled: MyString
+  acttaxitimedep: MyString
+  acttaxitimearr: MyString
+  minlatedeparted: MyString
+  minlatearrived: MyString
 
 two:
-  airline: MyString
-  flightnumber: 1
-  origin: MyString
-  destination: MyString
-  SchedDepLocal: 2017-05-07 13:43:08
+  flightid: MyString
+  airlinecode: MyString
+  flightnumber: MyString
+  scheddepapt: MyString
+  schedarrapt: MyString
+  scheddeputc: MyString
+  schedarrutc: MyString
+  scheddeplocal: MyString
+  schedarrlocal: MyString
+  diversionstatus: MyString
+  recovflightid: MyString
+  opairlinecode: MyString
+  opflightnumber: MyString
+  altdepapt: MyString
+  altarrapt: MyString
   depterminal: MyString
   depgate: MyString
+  arrterminal: MyString
+  arrgate: MyString
+  baggage: MyString
+  servicetype: MyString
   aircrafttype: MyString
+  unscheduled: MyString
+  depcountrycode: MyString
+  arrcountrycode: MyString
   tailnumber: MyString
-  outgatelocal: 2017-05-07 13:43:08
-  inairlocal: 2017-05-07 13:43:08
-  cancelled: 1
-  acttaxitimedep: 1
-  minlatedep: 1
+  regairlinecode: MyString
+  regflightnumber: MyString
+  origdate: MyString
+  prevfltalcode: MyString
+  prevfltnumber: MyString
+  prevfltschedarrlocal: MyString
+  prevfltschedarrutc: MyString
+  outgatelocal: MyString
+  outgateutc: MyString
+  outgateaccuracy: MyString
+  inairlocal: MyString
+  inairutc: MyString
+  inairaccuracy: MyString
+  landedlocal: MyString
+  landedutc: MyString
+  landedaccuracy: MyString
+  ingatelocal: MyString
+  ingateutc: MyString
+  ingateaccuracy: MyString
+  diversiontype: MyString
+  simplemaxalt: MyString
+  simpleavgalt: MyString
+  simplemaxspeed: MyString
+  simpleavgspeed: MyString
+  distancegc: MyString
+  timealoft: MyString
+  cancelled: MyString
+  acttaxitimedep: MyString
+  acttaxitimearr: MyString
+  minlatedeparted: MyString
+  minlatearrived: MyString

@@ -1,4 +1,11 @@
 <%= flash[:notice] %>
+<div>
+    <h4 class="deepshadow">Flight Data</h4>
+        <%= form_tag import_flights_path, multipart: true do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "Import CSV", :class => 'myButton' %>
+        <% end %>
+</div>
 <table>
     <thead>
         <tr>
@@ -20,30 +27,25 @@
     </thead>
     <tbody>
         <% @flights.each do |flight| %>
-            <tr>
-                <td><%= flight.airline %></td>
-                <td><%= flight.flightnumber %></td>
-                <td><%= flight.origin %></td>
-                <td><%= flight.destination %></td>
-                <td><%= flight.scheddeplocal %></td>
-                <td><%= flight.depterminal %></td>
-                <td><%= flight.depgate %></td>
-                <td><%= flight.aircrafttype %></td>
-                <td><%= flight.tailnumber %></td>
-                <td><%= flight.outgatelocal %></td>
-                <td><%= flight.inairlocal %></td>
-                <td><%= flight.cancelled %></td>
-                <td><%= flight.acttaxitimedep %></td>
-                <td><%= flight.minlatedep %></td>
-            </tr>
+            <% if flight.scheddepapt == "LGA" && flight.depterminal == 'B' %>
+                <tr>
+                    <td><%= flight.airlinecode %></td>
+                    <td><%= flight.flightnumber %></td>
+                    <td><%= flight.scheddepapt %></td>
+                    <td><%= flight.schedarrapt %></td>
+                    <td><%= flight.scheddeplocal %></td>
+                    <td><%= flight.depterminal %></td>
+                    <td><%= flight.depgate %></td>
+                    <td><%= flight.aircrafttype %></td>
+                    <td><%= flight.tailnumber %></td>
+                    <td><%= flight.outgatelocal %></td>
+                    <td><%= flight.inairlocal %></td>
+                    <td><%= flight.cancelled %></td>
+                    <td><%= flight.acttaxitimedep %></td>
+                    <td><%= flight.minlatedeparted %></td>
+                </tr>
+            <% end %>
         <% end %>
     </tbody>
 </table>
 
-<div>
-    <h4>Import More Flight Data</h4>
-        <%= form_tag import_flights_path, multipart: true do %>
-            <%= file_field_tag :file %>
-            <%= submit_tag "Import CSV" %>
-        <% end %>
-</div>
