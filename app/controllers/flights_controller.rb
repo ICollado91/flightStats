@@ -1,6 +1,9 @@
 class FlightsController < ApplicationController
   def index
     @flights = Flight.all
+    @arrs = Flight.arrivals
+    @deps = Flight.departures
+    @turns = Flight.turns
   end
 
   def import

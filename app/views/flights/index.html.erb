@@ -7,6 +7,9 @@
         <% end %>
 </div>
 <table>
+<%
+=begin
+%>
     <thead>
         <tr>
             <th>Airline</th>
@@ -25,9 +28,10 @@
             <th>Minutes Late Departed</th>
         </tr>
     </thead>
+
     <tbody>
         <% @flights.each do |flight| %>
-            <% if flight.scheddepapt == "LGA" && flight.depterminal == 'B' %>
+            <% if flight.scheddepapt == "LGA" && flight.depterminal == 'B' && flight.airlinecode == 'UA' && flight. %>
                 <tr>
                     <td><%= flight.airlinecode %></td>
                     <td><%= flight.flightnumber %></td>
@@ -43,6 +47,39 @@
                     <td><%= flight.cancelled %></td>
                     <td><%= flight.acttaxitimedep %></td>
                     <td><%= flight.minlatedeparted %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+<%
+=end
+%>
+    <thead>
+        <tr>
+            <th>Arrival</th>
+            <th>Departure</th>
+            <th>TailNumber</th>
+            <th>Arrival's Airport</th>
+            <th>Departure's Airport</th>
+            <th>Departure's Terminal</th>
+            <th>Arrival's Terminal</th>
+            <th>Arrival's Gate</th>
+            <th>Departure's Gate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @turns.each do |couple| %>
+            <% if couple[1].depterminal == "B" && couple[0].arrterminal == 'B' %>
+                <tr>
+                    <td><%= couple[0].airlinecode %> | <%= couple[0].flightnumber %></td>
+                    <td><%= couple[1].airlinecode %> | <%= couple[1].flightnumber %></td>
+                    <td><%= couple[0].tailnumber %> | <%= couple[1].tailnumber %></td>
+                    <td><%= couple[0].schedarrapt %></td>
+                    <td><%= couple[1].scheddeplocal %></td>
+                    <td><%= couple[1].depterminal %></td>
+                    <td><%= couple[0].arrterminal %></td>
+                    <td><%= couple[0].arrgate %></td>
+                    <td><%= couple[1].depgate %></td>
                 </tr>
             <% end %>
         <% end %>

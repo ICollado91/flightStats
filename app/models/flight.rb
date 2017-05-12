@@ -19,6 +19,40 @@ class Flight < ApplicationRecord
         self.scheddepapt == 'LGA'
     end
     
+    def self.departures
+        @flights = Flight.all
+        deps = Array.new
+        @flights.each do |flight|
+            if flight.scheddepapt == 'LGA' && flight.schedarrapt != 'LGA'
+                deps << flight
+            end
+        end
+        deps
+    end
+    
+    def self.arrivals
+        @flights = Flight.all
+        arrs = Array.new
+        @flights.each do |flight|
+            if flight.scheddepapt != 'LGA' && flight.schedarrapt == 'LGA'
+                arrs << flight
+            end
+        end
+        arrs
+    end
+    
+    def self.turns
+        turns = Array.new
+        departures do |dep|
+            arrivals do |arr|
+                if dep.tailnumber == arr.tailnumber
+                    turns << [arr, dep]
+                end
+            end
+        end
+        turns
+    end
+    
     private
     
     def self.create_flight(row)
