@@ -68,18 +68,18 @@
         </tr>
     </thead>
     <tbody>
-        <% @turns.each do |couple| %>
-            <% if couple[1].depterminal == "B" && couple[0].arrterminal == 'B' %>
+        <% @flights.each do |couple| %>
+            <% if couple.depterminal == "B" && couple.arrterminal == 'B' %>
                 <tr>
-                    <td><%= couple[0].airlinecode %> | <%= couple[0].flightnumber %></td>
-                    <td><%= couple[1].airlinecode %> | <%= couple[1].flightnumber %></td>
-                    <td><%= couple[0].tailnumber %> | <%= couple[1].tailnumber %></td>
-                    <td><%= couple[0].schedarrapt %></td>
-                    <td><%= couple[1].scheddeplocal %></td>
-                    <td><%= couple[1].depterminal %></td>
-                    <td><%= couple[0].arrterminal %></td>
-                    <td><%= couple[0].arrgate %></td>
-                    <td><%= couple[1].depgate %></td>
+                    <td><%= couple.airlinecode %> | <%= couple.flightnumber %></td>
+                    <td><%= couple.airlinecode %> | <%= couple.flightnumber %></td>
+                    <td><%= couple.tailnumber %> | <%= couple.tailnumber %></td>
+                    <td><%= couple.schedarrapt %></td>
+                    <td><%= couple.scheddeplocal %></td>
+                    <td><%= couple.depterminal %></td>
+                    <td><%= couple.arrterminal %></td>
+                    <td><%= couple.arrgate %></td>
+                    <td><%= couple.depgate %></td>
                 </tr>
             <% end %>
         <% end %>
